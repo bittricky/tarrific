@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Tariff Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for calculating import/export tariffs based on HS codes, countries, and other trade parameters. This tool helps businesses estimate the cost implications of international trade under different tariff scenarios.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **HS Code Selection**: Choose from a comprehensive list of Harmonized System codes
+- **Country Selection**: Specify origin and destination countries for shipments
+- **Currency Conversion**: Automatic conversion between different currencies
+- **Tariff Comparison**: Compare current vs. proposed tariff rates
+- **Detailed Cost Breakdown**: View shipping, logistics, and additional duty costs
+- **Responsive Design**: Works on desktop and mobile devices
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React with TypeScript
+- **Build Tool**: Vite
+- **UI Components**: Custom components with Radix UI primitives
+- **Styling**: TailwindCSS
+- **Data Sources**: Local CSV files for HS codes and sections
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or later)
+- npm or pnpm
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/bittricky/tariff-calculator.git
+   cd tariff-calculator
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+
+3. Start the development server
+   ```bash
+   npm run dev
+   # or
+   pnpm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal)
+
+## Project Structure
+
+```
+├── public/             # Static assets
+├── src/
+│   ├── components/     # React components
+│   │   ├── ui/         # Reusable UI components
+│   │   └── ...         # Feature-specific components
+│   ├── data/           # Local data files
+│   │   ├── HSCode.csv  # HS code data
+│   │   └── HSCodeSections.csv # HS code sections
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   ├── global.d.ts     # TypeScript declarations
+│   ├── App.tsx         # Main application component
+│   └── main.tsx        # Application entry point
+├── package.json        # Project dependencies
+└── vite.config.ts      # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Recent Developments
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### UI Enhancements
+- Implemented a modern, accessible UI using Radix UI design principles
+- Added form validation with clear error messages
+- Improved responsive layout for better mobile experience
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Data Management
+- Integrated local CSV files for HS code data instead of external API dependency
+- Implemented CSV parsing logic with fallback mechanisms
+- Created custom hooks for data fetching and state management
+
+### Form Handling
+- Simplified select field implementation for better compatibility
+- Added proper event handling for form inputs
+- Implemented consistent styling across all form elements
