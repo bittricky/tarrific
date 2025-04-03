@@ -1,4 +1,4 @@
-# Tariff Calculator
+# Tariffic - Tariff Calculator
 
 A modern web application for calculating import/export tariffs based on HS codes, countries, and other trade parameters. This tool helps businesses estimate the cost implications of international trade under different tariff scenarios.
 
