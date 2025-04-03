@@ -30,8 +30,8 @@ A modern web application for calculating import/export tariffs based on HS codes
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/bittricky/tariff-calculator.git
-   cd tariff-calculator
+   git clone https://github.com/bittricky/tarrific.git
+   cd tarrific
    ```
 
 2. Install dependencies
